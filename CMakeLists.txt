@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 
 if ($ENV{TRAVIS_BUILD_NUMBER})
-    set(PROJECT_VERSION "0.0."$ENV{TRAVIS_BUILD_NUMBER})
+    set(PROJECT_VERSION "0.0.$ENV{TRAVIS_BUILD_NUMBER}")
 else()
     set(PROJECT_VERSION "0.0.667")
 endif()
