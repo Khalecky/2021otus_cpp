@@ -14,3 +14,4 @@ deploy:
     deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
  on:
   branch: hw1-1
+  curl -S -T helloworld-0.0.667-Linux.deb -ukhalecky:ebc693140c4f33a538cae685807256e3cf6f549b "https://api.bintray.com/content/khalecky/otus_cpp/homework/667/helloworld-0.0.667-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
