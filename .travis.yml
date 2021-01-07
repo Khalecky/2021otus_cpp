@@ -9,7 +9,7 @@ deploy:
  provider: script
  skip_cleanup: true
  script:
- - curl -v -s -T -2 helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ukhalecky:$BINTRAY_API_KEY
+ - curl -v -S -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ukhalecky:$BINTRAY_API_KEY
     "https://api.bintray.com/content/khalecky/otus21_cpp/homework/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;
     deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
  on:
