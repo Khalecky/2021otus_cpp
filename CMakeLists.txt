@@ -10,7 +10,7 @@ project(helloworld VERSION ${PROJECT_VERSION})
 
 configure_file(version.h.in version.h)
 
-find_package(GTest)
+find_package(GTest REQUIRED)
 
 add_executable(helloworld src/main.cpp)
 target_include_directories(helloworld PRIVATE "${CMAKE_BINARY_DIR}")
