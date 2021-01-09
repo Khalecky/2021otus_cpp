@@ -1,6 +1,7 @@
 language: cpp
 before_script:
 - sudo apt-get update -qq
+- sudo apt-get install libgtest-dev
 script:
 - cmake .
 - cmake --build .
