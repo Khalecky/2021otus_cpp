@@ -2,6 +2,7 @@ language: cpp
 #compiler: clang
 before_script:
 - sudo apt-get update -qq
+- sudo apt-get update cmake
 - sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib
 script:
 - cmake .
