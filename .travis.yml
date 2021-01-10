@@ -10,9 +10,11 @@ before_script:
 # - sudo make install
 #- sudo cp *.a /usr/lib
 script:
+- pushd ~
 - git clone https://github.com/google/googletest.git && cd googletest && mkdir build && cd build
 - cmake .. && make
-- sudo make install && cd ..
+- sudo make install
+- popd
 - cmake .
 - cmake --build .
 - cmake --build . --target test
