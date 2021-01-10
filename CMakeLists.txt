@@ -10,7 +10,7 @@ project(helloworld VERSION ${PROJECT_VERSION})
 
 configure_file(version.h.in version.h)
 
-find_package(GTest REQUIRED)
+find_package(GTest)
 
 add_executable(helloworld src/main.cpp)
 target_include_directories(helloworld PRIVATE "${CMAKE_BINARY_DIR}")
@@ -20,7 +20,7 @@ target_include_directories(app_test PRIVATE
     ${CMAKE_BINARY_DIR}
     ${GTEST_INCLUDE_DIRS}
 )
-target_link_libraries(app_test PRIVATE ${GTEST_LIBRARIES} pthread)
+target_link_libraries(app_test PRIVATE ${GTEST_BOTH_LIBRARIES} pthread)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
