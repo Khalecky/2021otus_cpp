@@ -3,20 +3,27 @@
 #include <string>
 #include <vector>
 #include <set>
+#include <iostream>
 
 class ListIP
 {
     using IP = std::vector<unsigned>;
     // структура-множество для хранения IP в нужном обратном лексикографическом порядке
-    using SetIp = std::multiset<IP, std::greater<IP> >;
+    using ContainerIp = std::multiset<IP, std::greater<IP>>;
 
-    SetIp setIp;
+    ContainerIp containerIp;
 
     void print_ip(const IP &ip) const;
+    void print_range_ip(const ContainerIp::iterator &from, const ContainerIp::iterator &to) const;
+    void print_range_by_bytes_order(const IP &bytesOrder) const;
 
 public:
-
     void append(const std::vector<std::string> &ip_str);
     void print() const;
-    void print(unsigned) const;
+
+    //наверное надо бы variadic
+    void filter(unsigned) const;
+    void filter(unsigned, unsigned) const;
+
+    void filter_any(unsigned) const;
 };

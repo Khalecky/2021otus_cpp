@@ -46,8 +46,10 @@ int main(int argc, char const *argv[])
         }
 
         // TODO reverse lexicographically sort
-        //listIp.print();
-        listIp.print(1);
+        listIp.print();
+        listIp.filter(1);
+        listIp.filter(46, 70);
+        listIp.filter_any(46);
 
         return 0;
 

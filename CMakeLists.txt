@@ -14,8 +14,8 @@ find_package(GTest)
 
 set (SOURCES src/main.cpp src/ip_filter.cpp)
 
-add_executable(helloworld ${SOURCES})
-target_include_directories(helloworld PRIVATE "${CMAKE_BINARY_DIR}")
+add_executable(ip_filter ${SOURCES})
+target_include_directories(ip_filter PRIVATE "${CMAKE_BINARY_DIR}")
 
 add_executable(app_test test/test_version.cpp)
 target_include_directories(app_test PRIVATE 
@@ -27,7 +27,7 @@ target_link_libraries(app_test PRIVATE ${GTEST_BOTH_LIBRARIES} pthread)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-install(TARGETS helloworld RUNTIME DESTINATION bin)
+install(TARGETS ip_filter RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
