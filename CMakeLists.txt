@@ -12,7 +12,9 @@ configure_file(version.h.in version.h)
 
 find_package(GTest)
 
-add_executable(helloworld src/main.cpp)
+set (SOURCES src/main.cpp src/ip_filter.cpp)
+
+add_executable(helloworld ${SOURCES})
 target_include_directories(helloworld PRIVATE "${CMAKE_BINARY_DIR}")
 
 add_executable(app_test test/test_version.cpp)
@@ -22,7 +24,7 @@ target_include_directories(app_test PRIVATE
 )
 target_link_libraries(app_test PRIVATE ${GTEST_BOTH_LIBRARIES} pthread)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 install(TARGETS helloworld RUNTIME DESTINATION bin)
