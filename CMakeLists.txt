@@ -6,7 +6,7 @@ else()
     set(PROJECT_VERSION "0.0.1")
 endif()
 
-project(helloworld VERSION ${PROJECT_VERSION})
+project(ip_filter VERSION ${PROJECT_VERSION})
 
 configure_file(version.h.in version.h)
 
