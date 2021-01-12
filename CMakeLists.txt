@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.2)
 
 if ($ENV{TRAVIS_BUILD_NUMBER})
@@ -24,8 +25,10 @@ target_include_directories(app_test PRIVATE
 )
 target_link_libraries(app_test PRIVATE ${GTEST_BOTH_LIBRARIES} pthread)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set_target_properties(ip_filter app_test PROPERTIES 
+    CXX_STANDARD 14 
+    CXX_STANDARD_REQUIRED ON
+)
 
 install(TARGETS ip_filter RUNTIME DESTINATION bin)
 
