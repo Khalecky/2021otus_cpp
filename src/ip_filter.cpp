@@ -4,7 +4,7 @@
 
 void ListIP::print_ip(const IP &ip) const
 {
-    for (IP::const_iterator ip_part = ip.cbegin(); ip_part != ip.cend(); ++ip_part)
+    for (auto ip_part = ip.cbegin(); ip_part != ip.cend(); ++ip_part)
     {
         if (ip_part != ip.cbegin())
         {
@@ -58,17 +58,17 @@ void ListIP::print_range_by_bytes_order(const IP &bytesOrder) const
 
 }
 
-void ListIP::filter(unsigned byte) const
+void ListIP::filter(IP_BYTE byte) const
 {    
     print_range_by_bytes_order(IP{byte});
 }
 
-void ListIP::filter(unsigned byte1, unsigned byte2) const
+void ListIP::filter(IP_BYTE byte1, IP_BYTE byte2) const
 {
     print_range_by_bytes_order( IP{byte1, byte2} );
 }
 
-void ListIP::filter_any(unsigned byte) const
+void ListIP::filter_any(IP_BYTE byte) const
 {
     auto print_match = [this, byte](const IP& ip) {
         if (std::any_of(ip.begin(), ip.end(), [byte](unsigned ip_part) { return ip_part == byte;})) {

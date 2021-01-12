@@ -6,7 +6,8 @@
 
 class ListIP
 {
-    using IP = std::vector<unsigned>;
+    using IP_BYTE = unsigned char;
+    using IP = std::vector<IP_BYTE>;
     // структура-множество для хранения IP в нужном обратном лексикографическом порядке
     using ContainerIp = std::multiset<IP, std::greater<IP>>;
 
@@ -21,8 +22,8 @@ public:
     void print() const;
 
     //наверное надо бы variadic
-    void filter(unsigned) const;
-    void filter(unsigned, unsigned) const;
+    void filter(IP_BYTE) const;
+    void filter(IP_BYTE, IP_BYTE) const;
 
-    void filter_any(unsigned) const;
+    void filter_any(IP_BYTE) const;
 };
