@@ -15,6 +15,6 @@ deploy:
  provider: script
  skip_cleanup: true
  script:
- - curl -v -S -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ukhalecky:$BINTRAY_API_KEY "https://api.bintray.com/content/khalecky/otus21_cpp/homework/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+ - curl -v -S -T allocator-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ukhalecky:$BINTRAY_API_KEY "https://api.bintray.com/content/khalecky/otus21_cpp/homework/$TRAVIS_BUILD_NUMBER/allocator-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
  on:
-  branch: hw1-1
+  branch: hw2-allocator
