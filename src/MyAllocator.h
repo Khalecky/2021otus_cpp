@@ -19,16 +19,21 @@ struct MyAllocator
     size_t length = 0;    
 
     MyAllocator() = default;
+    MyAllocator(const MyAllocator&) = default;
 
     ~MyAllocator() 
     {
         if (ptr) {
-            delete [] ptr;
+            std::free(ptr);            
         }
     }
 
     T *allocate(size_t n)
     {
+        if (n + length > capacity) {
+            throw new std::bad_alloc;
+        }
+
         if (!ptr) {
             ptr = (value_type*) malloc(capacity * sizeof(value_type));
         }
@@ -50,11 +55,7 @@ struct MyAllocator
     }
 
     void deallocate(value_type *p, size_t n)
-    {        
-        if (p == ptr) {
-            std::free(ptr);
-            ptr = nullptr;
-        }
+    {   
     }
 
 };

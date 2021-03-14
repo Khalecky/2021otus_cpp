@@ -40,7 +40,7 @@ void runMyContainer()
     }
 
     {
-        MyContainer<int, 10, MyAllocator<int, 3>> myContainer;
+        MyContainer<int, 10, MyAllocator<int, 10>> myContainer;
         for (int i = 0; i < 10; ++i) {
             myContainer.push(i);
         }
